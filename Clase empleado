@@ -1,0 +1,88 @@
+package POO;
+
+import java.util.*;
+
+import javax.swing.JOptionPane;
+
+
+
+public class UsoEmpleado {
+	
+	public static void main(String[] args) {
+		
+	
+	    
+	    Empleado[] empleados= new Empleado[3];
+	    
+	    empleados [0]= new Empleado("Andres Gonzalez", 500.55, 2000,9,2);
+	    empleados [1]= new Empleado("Jorge alvarez",200.7,2000,3,13);
+	    empleados [2]= new Empleado("Sergio Aguero",100.7,2019,5,6);
+	    
+	    for(Empleado e: empleados) {
+	    	e.subirSueldo(50);
+	    }
+	    
+	    for (Empleado e: empleados) {
+	    	System.out.println("Nombre del empleado: "+ e.dimeNombre()+" El sueldo del empleado: "+ e.dimeSueldo()+"Fecha de contrato: "+ e.FechaContrato());
+	    }
+	    
+	   
+	   
+	   
+		
+	}
+	}
+	
+	 class Empleado {
+		 
+		 
+		
+		public Empleado(String nom, double suel,int anyo, int mes, int dia) {
+			
+			nombre= nom;
+			sueldo= suel;
+		GregorianCalendar calendario= new GregorianCalendar(anyo, mes-1, dia);
+			altaContrato= calendario.getTime();
+			
+			
+			
+			
+			
+					
+		}
+		
+		
+		
+		public String dimeNombre () {
+			return nombre;
+		}
+		
+		
+		
+		public double dimeSueldo() {
+			return sueldo;
+		}
+		
+		public Date  FechaContrato(){
+			return altaContrato;
+		}
+		
+		public  void subirSueldo (double porcentaje) {
+			double aumento= sueldo *porcentaje/100;
+			
+			sueldo += aumento;
+            
+			
+		}
+		
+		
+		
+		
+		
+		private String nombre;
+		private double sueldo;
+		private Date altaContrato;
+		
+		
+		
+	}
