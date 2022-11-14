@@ -1,0 +1,47 @@
+package POO;
+
+import java.util.*;
+
+
+
+
+
+public class UsoEmpleado {
+	
+	public static void main(String[] args) {
+		
+	    Jefatura jefe_rh = new Jefatura("Lionel Messi", 5500, 2016, 9, 25);
+	    jefe_rh.EstableceIncentivo(2570);
+	    
+	    
+	    
+	    Empleado[] empleados= new Empleado[6];
+	    
+	    empleados [0]= new Empleado("Andres Gonzalez", 500.55, 2000,9,2);
+	    empleados [1]= new Empleado("Jorge alvarez",200.7,2000,3,13);
+	    empleados [2]= new Empleado("Sergio Aguero",100.7,2019,5,6);
+	    empleados [3]= new Empleado("Joseph Joestar", 5000, 2020, 4, 7);
+	    empleados [4]= jefe_rh;//Polimorfismo en accion
+	    empleados [5]= new Jefatura ("Ann", 2500, 2018, 5, 14);
+	    
+	    Jefatura jefe_finanzas= (Jefatura)empleados [5];
+	    
+	    jefe_finanzas.EstableceIncentivo(55000);
+	    
+	    
+	    
+	    for(Empleado e: empleados) {
+	    	e.subirSueldo(50);
+	    }
+	    
+	    for (Empleado e: empleados) {
+	    	
+	    	System.out.println("Nombre del empleado: "+ e.dimeNombre()+" El sueldo del empleado: "+ e.dimeSueldo()+"Fecha de contrato: "+ e.FechaContrato());
+	    }
+	    
+	   
+	   
+	   
+		
+	}
+	}
