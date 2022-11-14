@@ -1,0 +1,31 @@
+package POO;
+import javax.swing.*;
+public class UsoVehiculo {
+
+	public static void main(String[] args) {
+		
+		Coche miCoche= new Coche();
+		
+		
+		miCoche.establece_color(JOptionPane.showInputDialog("Introduce color"));
+		
+		
+		System.out.println(miCoche.dame_datos_generales());
+		System.out.println(miCoche.dimeColor());
+		miCoche.configuracion_asientos(JOptionPane.showInputDialog("Tiene asientos de cuero?"));
+		System.out.println(miCoche.dime_asientos());
+		miCoche.configura_climatizador(JOptionPane.showInputDialog("Tiene climatizador?")); 
+		System.out.println(miCoche.dime_climatizador());
+		System.out.println(miCoche.dime_peso_coche());
+		System.out.println("El precio del coche es: "+ miCoche.precio_coche());
+		
+		Furgoneta furgoneta1= new Furgoneta(7, 500);
+		
+		furgoneta1.establece_color("Azul");
+		furgoneta1.configuracion_asientos("Si");
+		furgoneta1.configura_climatizador("Si");
+		
+		System.out.println(furgoneta1.dame_datos_generales()+"  "+ furgoneta1.dimeDatosFurgoneta());
+	}
+
+}
